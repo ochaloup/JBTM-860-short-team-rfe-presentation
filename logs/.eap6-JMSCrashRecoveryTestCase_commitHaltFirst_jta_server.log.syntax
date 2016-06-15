@@ -1,0 +1,9 @@
+
+syntax match logDate /^\d\{4}-\d\{2}-\d\{2}/  nextgroup=logTime skipwhite
+syntax match arjunaWarn /^.*WARN.*\[com.arjuna[^\]]*\]/
+syntax match logTime /\d\{2}:\d\{2}:\d\{2},\d\{3}/
+syntax match startedStopped /EAP [0-9].*started/
+syntax match startedStopped /EAP [0-9].*stopped/
+syntax match startedStopped /Deployed[^(]*/
+syntax match red /killing JVM/
+syntax match className /\zs\[[^\]]*\]\ze (/
