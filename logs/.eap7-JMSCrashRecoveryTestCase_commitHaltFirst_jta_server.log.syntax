@@ -1,16 +1,15 @@
 
 syntax match orange /.*ARJUNA016037: Could not find new XAResource to use for recovering non-serializable XAResource XAResourceRecord.*/
-syntax match blue2 /0:ffff7f000001:1ab67182:57619e84:27/
+syntax match orange2 /was committed by resource manager/
+syntax match blue2 /0:ffff7f000001:-1b58e3c9:5761a1bf:27/
 syntax match logDate /^\d\{4}-\d\{2}-\d\{2}/  nextgroup=logTime skipwhite
 syntax match green /topLevel[A-Za-z]*/
-syntax match green /0:ffff7f000001:1ab67182:57619e84:1b/
-syntax match blue /0:ffff7f000001:21b2d18a:57619c93:1b/
-syntax match blue /0:ffff7f000001:1ab67182:57619e84:1b/
+syntax match blue /0:ffff7f000001:-1b58e3c9:5761a1bf:1b/
 syntax match arjunaWarn /^.*WARN.*\[com.arjuna[^\]]*\]/
 syntax match logTime /\d\{2}:\d\{2}:\d\{2},\d\{3}/
 syntax match startedStopped /EAP [0-9].*started/
 syntax match startedStopped /EAP [0-9].*stopped/
 syntax match startedStopped /Deployed[^(]*/
 syntax match red /killing JVM/
-syntax match blue3 /0:ffff7f000001:1ab67182:57619e84:21/
+syntax match blue3 /0:ffff7f000001:-1b58e3c9:5761a1bf:21/
 syntax match className /\zs\[[^\]]*\]\ze (/
