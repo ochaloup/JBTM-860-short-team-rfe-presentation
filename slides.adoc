@@ -73,6 +73,25 @@ image:{images}/txn-process.png[role="noborder"]
 
 image:{images}/recovery.png[role="noborder"]
 
+[NOTE.speaker]
+--
+Xid API: https://docs.oracle.com/javase/7/docs/api/javax/transaction/xa/Xid.html
+
+```
+tx-object-store/
+└── ShadowNoFileLockStore
+   └── defaultStore
+       ├── EISNAME
+       │   ├── 0_ffff7f000001_-53130873_57626f24_22
+       │   └── 0_ffff7f000001_-53130873_57626f24_28
+       └── StateManager
+           └── BasicAction
+               └── TwoPhaseCoordinator
+                   └── AtomicAction
+                       └── 0_ffff7f000001_-53130873_57626f24_1d
+```
+--
+
 
 == Test scenario
 

@@ -1,3 +1,19 @@
+:o: pass:normal[+[{nbsp}]+]
+:c: pass:normal[+[&#10004;]+]
+
 = Presentation of feature JBTM-860
 
+== Checklist
 
+{o} gvim increasing font size possibile
+
+====
+fontsize vim plugin: <leader><leader>+ we have to say that
+leader is by default `\` and plus has to be pressed on letters part
+of the keyboard pressing the numeric `+` does not work
+====
+
+{o} open all log files in gvim
+{o} open eclipse with crashrec test project
+{o} open Xid API documentation
+{o} screencast with `gtk-recordMyDesktop`

@@ -32,7 +32,19 @@ may remain in an uncommitted state.</p></li></ul></div></aside><p><small>Ondra C
 <section><div class="paragraph"><p>[WARN] ARJUNA016037: Could not find new XAResource to use
 for recovering non-serializable XAResource XAResourceRecord</p></div></section>
 <section id="_transaction_processing"><h2>Transaction processing</h2><div class="paragraph"><p><span class="image noborder"><img src="./images/txn-process.png" alt="txn process"></span></p></div></section>
-<section id="_transaction_recovery"><h2>Transaction recovery</h2><div class="paragraph"><p><span class="image noborder"><img src="./images/recovery.png" alt="recovery"></span></p></div></section>
+<section id="_transaction_recovery"><h2>Transaction recovery</h2><div class="paragraph"><p><span class="image noborder"><img src="./images/recovery.png" alt="recovery"></span></p></div>
+<aside class="notes"><div class="paragraph"><p>Xid API: <a href="https://docs.oracle.com/javase/7/docs/api/javax/transaction/xa/Xid.html" class="bare">https://docs.oracle.com/javase/7/docs/api/javax/transaction/xa/Xid.html</a></p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code>tx-object-store/
+└── ShadowNoFileLockStore
+   └── defaultStore
+       ├── EISNAME
+       │   ├── 0_ffff7f000001_-53130873_57626f24_22
+       │   └── 0_ffff7f000001_-53130873_57626f24_28
+       └── StateManager
+           └── BasicAction
+               └── TwoPhaseCoordinator
+                   └── AtomicAction
+                       └── 0_ffff7f000001_-53130873_57626f24_1d</code></pre></div></div></aside></section>
 <section id="_test_scenario"><h2>Test scenario</h2><div class="olist arabic"><ol class="arabic"><li><p>prepare XA resource</p></li><li><p>prepare TestXA resource</p></li><li><p>commit XA resource</p></li><li><p>JBoss EAP JVM crash</p></li><li><p>recovery started</p></li><li><p>commit TestXA resource</p></li></ol></div>
 <aside class="notes"><div class="paragraph"><p>check logs under directory <code>logs/</code></p></div></aside></section>
 <section id="_old_days_eap6_x"><h2>Old days (=&lt; EAP6.x)</h2><div class="ulist"><ul><li><p>wait for <code>ExpiryScanner</code></p></li><li><p>set <code>JTAEnvironmentBean.xaAssumeRecoveryComplete=true</code></p></li></ul></div>
