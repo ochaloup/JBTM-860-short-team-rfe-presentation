@@ -7,7 +7,8 @@
 :images: ./images
 
 = EAP7-264 / JBTM-860
-use XAResourceWrapper metadata for assume complete
+Ondra Chaloupka / ochaloup@redhat.com
+
 
 [NOTE.speaker]
 --
@@ -57,16 +58,21 @@ There are two possible solutions to this problem:
 
 == use XAResourceWrapper metadata for assume complete?
 
-image:{images}/misc/wtf2.jpg[class="noborder", height="450"]
+image:{images}/misc/wtf2.jpg[role="noborder", height="450"]
 
 == !
 
 [WARN] ARJUNA016037: Could not find new XAResource to use
 for recovering non-serializable XAResource XAResourceRecord
 
-== Two-phase commit protocol
+== Transaction processing
 
-image:{images}/2pc.png[height="500"]
+image:{images}/txn-process.png[role="noborder"]
+
+== Transaction recovery
+
+image:{images}/recovery.png[role="noborder"]
+
 
 == Test scenario
 
@@ -112,7 +118,7 @@ Limitation:
 
 == ?!
 
-image:{images}/misc/cajk.jpg[class="noborder", height="550"]
+image:{images}/misc/cajk.jpg[role="noborder", height="550"]
 
 
 == References
